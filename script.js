@@ -15,14 +15,14 @@ function showBothPic() {
     arr[0] = elem1.childNodes.item(1);
     arr[1] = elem2.childNodes.item(1);
     
-    let flag = true;
+    let flag = false;
     for(const elem of arr)
-        flag = flag & elem.classList.contains("hide");
+        flag = flag | elem.classList.contains("hide");
     
-    if(flag)
+    if(!flag)
         for(let elem of arr)
-            elem.classList.remove("hide");
+            elem.classList.add("hide");
     else 
         for(const elem of arr)
-            elem.classList.add("hide");
+            elem.classList.remove("hide");
 }
